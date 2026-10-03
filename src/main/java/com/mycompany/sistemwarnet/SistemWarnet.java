@@ -1,6 +1,14 @@
-public class SistemWarnet {
+package com.mycompany.sistemwarnet;
 
+public class SistemWarnet {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Perangkat perangkat = new Perangkat(
+                1,
+                "PC-01",
+                5000,
+                "Tersedia"
+        );
+
+        perangkat.tampilkanInfo();
     }
 }
