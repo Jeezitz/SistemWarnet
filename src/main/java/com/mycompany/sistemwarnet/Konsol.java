@@ -7,6 +7,7 @@ public class Konsol extends Perangkat {
     public Konsol(int id, String namaPerangkat,
                   double hargaPerJam, String status,
                   String jenisKonsol, int jumlahController) {
+
         super(id, namaPerangkat, hargaPerJam, status);
         this.jenisKonsol = jenisKonsol;
         this.jumlahController = jumlahController;

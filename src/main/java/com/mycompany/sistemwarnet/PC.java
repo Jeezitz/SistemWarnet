@@ -7,6 +7,7 @@ public class PC extends Perangkat {
     public PC(int id, String namaPerangkat,
               double hargaPerJam, String status,
               String processor, String kartuGrafis) {
+
         super(id, namaPerangkat, hargaPerJam, status);
         this.processor = processor;
         this.kartuGrafis = kartuGrafis;
