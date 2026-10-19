@@ -1,6 +1,6 @@
 package com.mycompany.sistemwarnet;
 
-public class Perangkat {
+public abstract class Perangkat {
     private int id;
     private String namaPerangkat;
     private double hargaPerJam;
@@ -10,10 +10,10 @@ public class Perangkat {
 
     public Perangkat(int id, String namaPerangkat,
                      double hargaPerJam, String status) {
-        this.id = id;
-        this.namaPerangkat = namaPerangkat;
-        this.hargaPerJam = hargaPerJam;
-        this.status = status;
+        setId(id);
+        setNamaPerangkat(namaPerangkat);
+        setHargaPerJam(hargaPerJam);
+        setStatus(status);
         totalPerangkat++;
     }
 
@@ -34,7 +34,7 @@ public class Perangkat {
     }
 
     public void setNamaPerangkat(String namaPerangkat) {
-        if (!namaPerangkat.isEmpty()) {
+        if (namaPerangkat != null && !namaPerangkat.trim().isEmpty()) {
             this.namaPerangkat = namaPerangkat;
         } else {
             System.out.println("Nama perangkat tidak boleh kosong.");
@@ -58,8 +58,9 @@ public class Perangkat {
     }
 
     public void setStatus(String status) {
-        if (status.equalsIgnoreCase("Tersedia")
-                || status.equalsIgnoreCase("Digunakan")) {
+        if (status != null &&
+                (status.equalsIgnoreCase("Tersedia")
+                || status.equalsIgnoreCase("Digunakan"))) {
             this.status = status;
         } else {
             System.out.println("Status hanya boleh Tersedia atau Digunakan.");
@@ -76,4 +77,6 @@ public class Perangkat {
         System.out.println("Harga    : Rp" + this.hargaPerJam + "/jam");
         System.out.println("Status   : " + this.status);
     }
+
+    public abstract void mulaiLayanan();
 }
