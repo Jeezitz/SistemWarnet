@@ -1,15 +1,18 @@
 package com.mycompany.sistemwarnet;
 
-public class PC extends Perangkat implements DapatDisewa, DapatDiberiRating {
+public class PC extends Perangkat
+        implements DapatDisewa, DapatDiberiRating {
+
     private String processor;
     private String kartuGrafis;
 
     public PC(int id, String namaPerangkat,
               double hargaPerJam, String status,
               String processor, String kartuGrafis) {
+
         super(id, namaPerangkat, hargaPerJam, status);
-        setProcessor(processor);
-        setKartuGrafis(kartuGrafis);
+        this.processor = processor;
+        this.kartuGrafis = kartuGrafis;
     }
 
     public String getProcessor() {
@@ -17,10 +20,8 @@ public class PC extends Perangkat implements DapatDisewa, DapatDiberiRating {
     }
 
     public void setProcessor(String processor) {
-        if (processor != null && !processor.trim().isEmpty()) {
+        if (!processor.isEmpty()) {
             this.processor = processor;
-        } else {
-            System.out.println("Processor tidak boleh kosong.");
         }
     }
 
@@ -29,10 +30,8 @@ public class PC extends Perangkat implements DapatDisewa, DapatDiberiRating {
     }
 
     public void setKartuGrafis(String kartuGrafis) {
-        if (kartuGrafis != null && !kartuGrafis.trim().isEmpty()) {
+        if (!kartuGrafis.isEmpty()) {
             this.kartuGrafis = kartuGrafis;
-        } else {
-            System.out.println("Kartu grafis tidak boleh kosong.");
         }
     }
 
@@ -56,10 +55,7 @@ public class PC extends Perangkat implements DapatDisewa, DapatDiberiRating {
 
     @Override
     public void beriRating(int rating) {
-        if (rating >= 1 && rating <= 5) {
-            System.out.println("PC mendapat rating: " + rating + "/5.");
-        } else {
-            System.out.println("Rating harus berada pada rentang 1 sampai 5.");
-        }
+        System.out.println("PC mendapat rating: "
+                + rating + "/5.");
     }
 }

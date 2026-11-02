@@ -10,10 +10,10 @@ public abstract class Perangkat {
 
     public Perangkat(int id, String namaPerangkat,
                      double hargaPerJam, String status) {
-        setId(id);
-        setNamaPerangkat(namaPerangkat);
-        setHargaPerJam(hargaPerJam);
-        setStatus(status);
+        this.id = id;
+        this.namaPerangkat = namaPerangkat;
+        this.hargaPerJam = hargaPerJam;
+        this.status = status;
         totalPerangkat++;
     }
 
@@ -34,7 +34,7 @@ public abstract class Perangkat {
     }
 
     public void setNamaPerangkat(String namaPerangkat) {
-        if (namaPerangkat != null && !namaPerangkat.trim().isEmpty()) {
+        if (namaPerangkat != null && !namaPerangkat.isEmpty()) {
             this.namaPerangkat = namaPerangkat;
         } else {
             System.out.println("Nama perangkat tidak boleh kosong.");
@@ -58,9 +58,8 @@ public abstract class Perangkat {
     }
 
     public void setStatus(String status) {
-        if (status != null &&
-                (status.equalsIgnoreCase("Tersedia")
-                || status.equalsIgnoreCase("Digunakan"))) {
+        if (status.equalsIgnoreCase("Tersedia")
+                || status.equalsIgnoreCase("Digunakan")) {
             this.status = status;
         } else {
             System.out.println("Status hanya boleh Tersedia atau Digunakan.");
