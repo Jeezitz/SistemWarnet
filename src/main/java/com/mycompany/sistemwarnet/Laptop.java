@@ -1,22 +1,18 @@
 package com.mycompany.sistemwarnet;
 
-public class Laptop extends Perangkat
-        implements DapatDiberiRating {
-
+public class Laptop extends Perangkat implements DapatDiberiRating {
     private String processor;
     private String ukuranLayar;
 
-    public Laptop(int id, String namaPerangkat,
-                  double hargaPerJam, String status,
-                  String processor, String ukuranLayar) {
-
+    public Laptop(int id, String namaPerangkat, double hargaPerJam,
+                  String status, String processor, String ukuranLayar) {
         super(id, namaPerangkat, hargaPerJam, status);
         this.processor = processor;
         this.ukuranLayar = ukuranLayar;
     }
 
     public String getProcessor() {
-        return this.processor;
+        return processor;
     }
 
     public void setProcessor(String processor) {
@@ -26,7 +22,7 @@ public class Laptop extends Perangkat
     }
 
     public String getUkuranLayar() {
-        return this.ukuranLayar;
+        return ukuranLayar;
     }
 
     public void setUkuranLayar(String ukuranLayar) {
@@ -38,20 +34,18 @@ public class Laptop extends Perangkat
     @Override
     public void tampilkanInfo() {
         super.tampilkanInfo();
-        System.out.println("Processor : " + this.processor);
-        System.out.println("Layar     : " + this.ukuranLayar);
+        System.out.println("Processor : " + processor);
+        System.out.println("Layar     : " + ukuranLayar);
         System.out.println("Tipe      : Laptop");
     }
 
     @Override
     public void mulaiLayanan() {
-        System.out.println(
-                "Laptop siap digunakan untuk bekerja atau bermain.");
+        System.out.println("Laptop siap digunakan untuk bekerja atau bermain.");
     }
 
     @Override
     public void beriRating(int rating) {
-        System.out.println("Laptop mendapat rating: "
-                + rating + "/5.");
+        System.out.println("Laptop mendapat rating: " + rating + "/5.");
     }
 }

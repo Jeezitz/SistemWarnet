@@ -5,11 +5,9 @@ public abstract class Perangkat {
     private String namaPerangkat;
     private double hargaPerJam;
     private String status;
-
     private static int totalPerangkat = 0;
 
-    public Perangkat(int id, String namaPerangkat,
-                     double hargaPerJam, String status) {
+    public Perangkat(int id, String namaPerangkat, double hargaPerJam, String status) {
         this.id = id;
         this.namaPerangkat = namaPerangkat;
         this.hargaPerJam = hargaPerJam;
@@ -18,51 +16,43 @@ public abstract class Perangkat {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(int id) {
         if (id > 0) {
             this.id = id;
-        } else {
-            System.out.println("ID harus lebih dari 0.");
         }
     }
 
     public String getNamaPerangkat() {
-        return this.namaPerangkat;
+        return namaPerangkat;
     }
 
     public void setNamaPerangkat(String namaPerangkat) {
         if (namaPerangkat != null && !namaPerangkat.isEmpty()) {
             this.namaPerangkat = namaPerangkat;
-        } else {
-            System.out.println("Nama perangkat tidak boleh kosong.");
         }
     }
 
     public double getHargaPerJam() {
-        return this.hargaPerJam;
+        return hargaPerJam;
     }
 
     public void setHargaPerJam(double hargaPerJam) {
         if (hargaPerJam > 0) {
             this.hargaPerJam = hargaPerJam;
-        } else {
-            System.out.println("Harga per jam harus lebih dari 0.");
         }
     }
 
     public String getStatus() {
-        return this.status;
+        return status;
     }
 
     public void setStatus(String status) {
         if (status.equalsIgnoreCase("Tersedia")
                 || status.equalsIgnoreCase("Digunakan")) {
             this.status = status;
-        } else {
-            System.out.println("Status hanya boleh Tersedia atau Digunakan.");
         }
     }
 
@@ -71,10 +61,10 @@ public abstract class Perangkat {
     }
 
     public void tampilkanInfo() {
-        System.out.println("ID       : " + this.id);
-        System.out.println("Nama     : " + this.namaPerangkat);
-        System.out.println("Harga    : Rp" + this.hargaPerJam + "/jam");
-        System.out.println("Status   : " + this.status);
+        System.out.println("ID       : " + id);
+        System.out.println("Nama     : " + namaPerangkat);
+        System.out.println("Harga    : Rp" + hargaPerJam + "/jam");
+        System.out.println("Status   : " + status);
     }
 
     public abstract void mulaiLayanan();

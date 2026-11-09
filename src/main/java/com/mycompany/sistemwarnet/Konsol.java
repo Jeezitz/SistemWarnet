@@ -1,21 +1,18 @@
 package com.mycompany.sistemwarnet;
 
 public class Konsol extends Perangkat implements DapatDisewa {
-
     private String jenisKonsol;
     private int jumlahController;
 
-    public Konsol(int id, String namaPerangkat,
-                  double hargaPerJam, String status,
-                  String jenisKonsol, int jumlahController) {
-
+    public Konsol(int id, String namaPerangkat, double hargaPerJam,
+                  String status, String jenisKonsol, int jumlahController) {
         super(id, namaPerangkat, hargaPerJam, status);
         this.jenisKonsol = jenisKonsol;
         this.jumlahController = jumlahController;
     }
 
     public String getJenisKonsol() {
-        return this.jenisKonsol;
+        return jenisKonsol;
     }
 
     public void setJenisKonsol(String jenisKonsol) {
@@ -25,7 +22,7 @@ public class Konsol extends Perangkat implements DapatDisewa {
     }
 
     public int getJumlahController() {
-        return this.jumlahController;
+        return jumlahController;
     }
 
     public void setJumlahController(int jumlahController) {
@@ -37,8 +34,8 @@ public class Konsol extends Perangkat implements DapatDisewa {
     @Override
     public void tampilkanInfo() {
         super.tampilkanInfo();
-        System.out.println("Jenis      : " + this.jenisKonsol);
-        System.out.println("Controller : " + this.jumlahController);
+        System.out.println("Jenis      : " + jenisKonsol);
+        System.out.println("Controller : " + jumlahController);
         System.out.println("Tipe       : Konsol");
     }
 

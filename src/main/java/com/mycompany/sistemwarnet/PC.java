@@ -1,22 +1,18 @@
 package com.mycompany.sistemwarnet;
 
-public class PC extends Perangkat
-        implements DapatDisewa, DapatDiberiRating {
-
+public class PC extends Perangkat implements DapatDisewa, DapatDiberiRating {
     private String processor;
     private String kartuGrafis;
 
-    public PC(int id, String namaPerangkat,
-              double hargaPerJam, String status,
-              String processor, String kartuGrafis) {
-
+    public PC(int id, String namaPerangkat, double hargaPerJam,
+              String status, String processor, String kartuGrafis) {
         super(id, namaPerangkat, hargaPerJam, status);
         this.processor = processor;
         this.kartuGrafis = kartuGrafis;
     }
 
     public String getProcessor() {
-        return this.processor;
+        return processor;
     }
 
     public void setProcessor(String processor) {
@@ -26,7 +22,7 @@ public class PC extends Perangkat
     }
 
     public String getKartuGrafis() {
-        return this.kartuGrafis;
+        return kartuGrafis;
     }
 
     public void setKartuGrafis(String kartuGrafis) {
@@ -38,8 +34,8 @@ public class PC extends Perangkat
     @Override
     public void tampilkanInfo() {
         super.tampilkanInfo();
-        System.out.println("Processor: " + this.processor);
-        System.out.println("GPU      : " + this.kartuGrafis);
+        System.out.println("Processor: " + processor);
+        System.out.println("GPU      : " + kartuGrafis);
         System.out.println("Tipe     : PC");
     }
 
@@ -55,7 +51,6 @@ public class PC extends Perangkat
 
     @Override
     public void beriRating(int rating) {
-        System.out.println("PC mendapat rating: "
-                + rating + "/5.");
+        System.out.println("PC mendapat rating: " + rating + "/5.");
     }
 }
