@@ -5,7 +5,7 @@ public class TransaksiWarnet {
     public void prosesTransaksi(Pelanggan pelanggan, Perangkat perangkat) {
         System.out.println("\n========== TRANSAKSI WARNET ==========");
         System.out.println("Pelanggan : " + pelanggan.getNama());
-        System.out.println("Perangkat : " + perangkat.getNamaPerangkat());
+        System.out.println("Perangkat : " + perangkat.getNama());
         System.out.println("Harga     : Rp" + perangkat.getHargaPerJam() + "/jam");
 
         if (perangkat.getStatus().equalsIgnoreCase("Tersedia")) {

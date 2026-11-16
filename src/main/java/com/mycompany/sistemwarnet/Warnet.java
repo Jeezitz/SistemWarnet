@@ -1,9 +1,14 @@
+
 package com.mycompany.sistemwarnet;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Warnet {
+public class Warnet implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private String namaWarnet;
     private ArrayList<Perangkat> daftarPerangkat;
     private HashMap<String, Pelanggan> dataPelanggan;
@@ -22,7 +27,7 @@ public class Warnet {
     }
 
     public void setNamaWarnet(String namaWarnet) {
-        if (!namaWarnet.isEmpty()) {
+        if (namaWarnet != null && !namaWarnet.isEmpty()) {
             this.namaWarnet = namaWarnet;
         }
     }
@@ -47,17 +52,25 @@ public class Warnet {
         return dataPelanggan;
     }
 
-    public Perangkat cariPerangkat(int id)
+    // Pencarian perangkat menggunakan ID String
+    public Perangkat cariPerangkat(String id)
             throws PerangkatTidakDitemukanException {
 
         for (Perangkat perangkat : daftarPerangkat) {
-            if (perangkat.getId() == id) {
+            if (String.valueOf(perangkat.getId()).equals(id)) {
                 return perangkat;
             }
         }
 
         throw new PerangkatTidakDitemukanException(
                 "Perangkat dengan ID tersebut tidak ditemukan.");
+    }
+
+    // Overloading untuk pencarian menggunakan ID angka
+    public Perangkat cariPerangkat(int id)
+            throws PerangkatTidakDitemukanException {
+
+        return cariPerangkat(String.valueOf(id));
     }
 
     public Pelanggan cariPelanggan(String id)

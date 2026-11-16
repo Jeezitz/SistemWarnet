@@ -1,6 +1,12 @@
+
 package com.mycompany.sistemwarnet;
 
-public abstract class Perangkat {
+import java.io.Serializable;
+
+public abstract class Perangkat implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private int id;
     private String namaPerangkat;
     private double hargaPerJam;
@@ -22,6 +28,8 @@ public abstract class Perangkat {
     public void setId(int id) {
         if (id > 0) {
             this.id = id;
+        } else {
+            System.out.println("ID harus lebih dari 0.");
         }
     }
 
@@ -29,9 +37,16 @@ public abstract class Perangkat {
         return namaPerangkat;
     }
 
+    // Getter tambahan agar sesuai dengan pemanggilan di TransaksiWarnet
+    public String getNama() {
+        return namaPerangkat;
+    }
+
     public void setNamaPerangkat(String namaPerangkat) {
         if (namaPerangkat != null && !namaPerangkat.isEmpty()) {
             this.namaPerangkat = namaPerangkat;
+        } else {
+            System.out.println("Nama perangkat tidak boleh kosong.");
         }
     }
 
@@ -42,6 +57,8 @@ public abstract class Perangkat {
     public void setHargaPerJam(double hargaPerJam) {
         if (hargaPerJam > 0) {
             this.hargaPerJam = hargaPerJam;
+        } else {
+            System.out.println("Harga per jam harus lebih dari 0.");
         }
     }
 
@@ -50,9 +67,12 @@ public abstract class Perangkat {
     }
 
     public void setStatus(String status) {
-        if (status.equalsIgnoreCase("Tersedia")
-                || status.equalsIgnoreCase("Digunakan")) {
+        if (status != null && 
+            (status.equalsIgnoreCase("Tersedia") ||
+             status.equalsIgnoreCase("Digunakan"))) {
             this.status = status;
+        } else {
+            System.out.println("Status hanya boleh Tersedia atau Digunakan.");
         }
     }
 

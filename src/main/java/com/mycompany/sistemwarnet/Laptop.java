@@ -4,31 +4,21 @@ public class Laptop extends Perangkat implements DapatDiberiRating {
     private String processor;
     private String ukuranLayar;
 
-    public Laptop(int id, String namaPerangkat, double hargaPerJam,
-                  String status, String processor, String ukuranLayar) {
+    public Laptop(int id, String namaPerangkat, double hargaPerJam, String status,
+                  String processor, String ukuranLayar) {
         super(id, namaPerangkat, hargaPerJam, status);
         this.processor = processor;
         this.ukuranLayar = ukuranLayar;
     }
 
-    public String getProcessor() {
-        return processor;
-    }
-
+    public String getProcessor() { return processor; }
     public void setProcessor(String processor) {
-        if (!processor.isEmpty()) {
-            this.processor = processor;
-        }
+        if (!processor.isEmpty()) this.processor = processor;
     }
 
-    public String getUkuranLayar() {
-        return ukuranLayar;
-    }
-
+    public String getUkuranLayar() { return ukuranLayar; }
     public void setUkuranLayar(String ukuranLayar) {
-        if (!ukuranLayar.isEmpty()) {
-            this.ukuranLayar = ukuranLayar;
-        }
+        if (!ukuranLayar.isEmpty()) this.ukuranLayar = ukuranLayar;
     }
 
     @Override

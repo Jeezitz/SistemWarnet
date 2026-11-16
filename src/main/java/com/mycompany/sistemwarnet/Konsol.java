@@ -4,31 +4,21 @@ public class Konsol extends Perangkat implements DapatDisewa {
     private String jenisKonsol;
     private int jumlahController;
 
-    public Konsol(int id, String namaPerangkat, double hargaPerJam,
-                  String status, String jenisKonsol, int jumlahController) {
+    public Konsol(int id, String namaPerangkat, double hargaPerJam, String status,
+                  String jenisKonsol, int jumlahController) {
         super(id, namaPerangkat, hargaPerJam, status);
         this.jenisKonsol = jenisKonsol;
         this.jumlahController = jumlahController;
     }
 
-    public String getJenisKonsol() {
-        return jenisKonsol;
-    }
-
+    public String getJenisKonsol() { return jenisKonsol; }
     public void setJenisKonsol(String jenisKonsol) {
-        if (!jenisKonsol.isEmpty()) {
-            this.jenisKonsol = jenisKonsol;
-        }
+        if (!jenisKonsol.isEmpty()) this.jenisKonsol = jenisKonsol;
     }
 
-    public int getJumlahController() {
-        return jumlahController;
-    }
-
+    public int getJumlahController() { return jumlahController; }
     public void setJumlahController(int jumlahController) {
-        if (jumlahController > 0) {
-            this.jumlahController = jumlahController;
-        }
+        if (jumlahController > 0) this.jumlahController = jumlahController;
     }
 
     @Override

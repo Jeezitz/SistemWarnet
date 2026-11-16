@@ -4,31 +4,21 @@ public class PC extends Perangkat implements DapatDisewa, DapatDiberiRating {
     private String processor;
     private String kartuGrafis;
 
-    public PC(int id, String namaPerangkat, double hargaPerJam,
-              String status, String processor, String kartuGrafis) {
+    public PC(int id, String namaPerangkat, double hargaPerJam, String status,
+              String processor, String kartuGrafis) {
         super(id, namaPerangkat, hargaPerJam, status);
         this.processor = processor;
         this.kartuGrafis = kartuGrafis;
     }
 
-    public String getProcessor() {
-        return processor;
-    }
-
+    public String getProcessor() { return processor; }
     public void setProcessor(String processor) {
-        if (!processor.isEmpty()) {
-            this.processor = processor;
-        }
+        if (!processor.isEmpty()) this.processor = processor;
     }
 
-    public String getKartuGrafis() {
-        return kartuGrafis;
-    }
-
+    public String getKartuGrafis() { return kartuGrafis; }
     public void setKartuGrafis(String kartuGrafis) {
-        if (!kartuGrafis.isEmpty()) {
-            this.kartuGrafis = kartuGrafis;
-        }
+        if (!kartuGrafis.isEmpty()) this.kartuGrafis = kartuGrafis;
     }
 
     @Override
